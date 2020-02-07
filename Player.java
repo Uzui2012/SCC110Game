@@ -21,11 +21,11 @@ public class Player
         return yAxis;
     }
     //set x position of player
-    public double setX(){
+    public void setX(double x){
         this.xAxis = x;
     }
     //set y position of player
-    public double setY(){
+    public void setY(double y){
         this.yAxis = y;
     }
 
