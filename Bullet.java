@@ -1,8 +1,10 @@
-public class Bullet {
+public class Bullet 
+{
     private double xPosition;       // The X position of the bullet
     private double yPosition;       // The Y position of the bullet
     private int speed;              // The speed of the bullet
     private String colour;          // Colour of the bullet
+    private int orientation;        // Orientation of the bullet, will be the same as the player
 
     /** 
      * Create new instance of Bullet 
@@ -48,4 +50,8 @@ public class Bullet {
     public void setColour(String c) {
         colour = c;
     }
+
+    /*public void addTo(GameArena ga) {
+        // Add rectangles
+    }*/
 }
