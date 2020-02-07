@@ -1,19 +1,32 @@
-public class Player{
+public class Player
+{
     private double xAxis; //x axis position of player
     private double yAxis; //y axis position of player
     private double speed; //speed of the player
     private double acceleration; //acc of player
     //private String color;     //player colour
-    private player(double x, double y, double speed, double acceleration){
+    
+    public Player(double x, double y, double speed, double acceleration){
         xAxis = x;
         yAxis = y;
         this.speed = speed;
-        acceleration = acc;
+        this.acceleration = acceleration;
     }
-    private double getX(){
+    //obtain current x position of player
+    public double getX(){
         return xAxis;
     }
-    private double getY(){
+    //obtain current y position of player
+    public double getY(){
         return yAxis;
     }
+    //set x position of player
+    public double setX(){
+        this.xAxis = x;
+    }
+    //set y position of player
+    public double setY(){
+        this.yAxis = y;
+    }
+    
 }
