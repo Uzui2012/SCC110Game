@@ -5,8 +5,8 @@ public class Player
     private double speed; //speed of the player
     private double acceleration; //acc of player
     //private String color;     //player colour
-    
     public Player(double x, double y, double speed, double acceleration){
+
         xAxis = x;
         yAxis = y;
         this.speed = speed;
@@ -28,5 +28,5 @@ public class Player
     public double setY(){
         this.yAxis = y;
     }
-    
+
 }
