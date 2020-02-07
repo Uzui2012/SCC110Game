@@ -4,11 +4,11 @@ public class Player{
     private double speed; //speed of the player
     private double acceleration; //acc of player
     //private String color;     //player colour
-    private player(double x, double y, double speed, double acceleration){
+    private Player(double x, double y, double speed, double acceleration){
         xAxis = x;
         yAxis = y;
         this.speed = speed;
-        acceleration = acc;
+        this.acceleration = acceleration;
     }
     private double getX(){
         return xAxis;

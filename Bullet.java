@@ -10,7 +10,7 @@ public class Bullet {
      * @param y The Y Coordinate of the Bullet, in pixels
      * @param speed The speed of the Bullet
     */
-    public Bullet(double x, double y, double speed) {
+    public Bullet(double x, double y, int speed) {
         xPosition = x;
         yPosition = y;
         this.speed = speed;
