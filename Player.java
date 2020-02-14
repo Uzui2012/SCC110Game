@@ -2,15 +2,15 @@ public class Player
 {
     private double xAxis; //x axis position of player
     private double yAxis; //y axis position of player
-    private double speed; //speed of the player
+    private double height, width; 
     private double acceleration; //acc of player
     //private String color;     //player colour
     public Player(double x, double y, double h, double w, double acceleration){
 
         xAxis = x;
         yAxis = y;
-        this.h = h;
-        this.w = w;
+        this.height = h;
+        this.width = w;
         this.acceleration = acceleration;
     }
     //obtain current x position of player
@@ -30,26 +30,26 @@ public class Player
         this.yAxis = y;
     }
     public double getHeight(){
-        return Height;
+        return height;
     }
 
-    public void setHight(double h){
-        Height = h;
+    public void setHeight(double h){
+        height = h;
     }
 
     public double getWidth(){
-        return Width;
+        return width;
     }
 
     public void setWidth(double w){
-        Width = w;
+        width = w;
     }
 
     public double getAcceleration(){
-        return Acceleration;
+        return acceleration;
     }
     public void setAcceleration(double a){
-        Acceleration = a;
+        acceleration = a;
     }
 
 }
