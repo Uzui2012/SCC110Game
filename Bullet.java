@@ -13,6 +13,7 @@ public class Bullet
     private double height;          // Height of the bullet in pixels (default 20)
     private double dx;              // X increment
     private double dy;              // Y increment
+    Rectangle r;                    // Rectangle instance
 
     /** 
      * Create new instance of Bullet 
@@ -21,14 +22,15 @@ public class Bullet
      * @param speed The speed of the Bullet
      * @param ga GameArena instance to which the bullet will be added to
     */
-    public Bullet(double x, double y, int speed, GameArena ga) {
+    public Bullet(double x, double y, int speed, int o, GameArena ga) {
         xPosition = x;
         yPosition = y;
         this.speed = speed;
-        colour = "darkgrey";
+        orientation = o;
+        colour = "white";
         gameArena = ga;
         width = 5;      // Default width
-        height = 20;    // Default height
+        height = 5;    // Default height
         calculateIncrements();
     }
 
@@ -80,12 +82,8 @@ public class Bullet
         return height;
     }
 
-    /*public void addTo(GameArena ga) {
-        // Add rectangles
-    }*/
-
     public void draw() {
-        Rectangle r = new Rectangle(xPosition, yPosition, width, height, colour);
+        r = new Rectangle(xPosition, yPosition, width, height, colour);
         gameArena.addRectangle(r);
     }
 
@@ -97,5 +95,12 @@ public class Bullet
     public void move() {
         xPosition += dx;
         yPosition += dy;
+        r.setXPosition(xPosition);
+        r.setYPosition(yPosition);
+
+    }
+
+    public void delete() {
+        gameArena.removeRectangle(r);
     }
 }
