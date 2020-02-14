@@ -1,19 +1,21 @@
 public class Bullet 
 {
+    // Coords start from top left corner
     private double xPosition;       // The X position of the bullet
     private double yPosition;       // The Y position of the bullet
     private int speed;              // The speed of the bullet
     private String colour;          // Colour of the bullet
     private int orientation;        // Orientation of the bullet, will be the same as the player
-    private GameArena gameArena;
-    private double width;
-    private double height;
+    private GameArena gameArena;    // GameArena instance which parents the bullet
+    private double width;           // Width of the bullet in pixels (default 5)
+    private double height;          // Height of the bullet in pixels (default 20)
 
     /** 
      * Create new instance of Bullet 
      * @param x The X Coordinate of the Bullet, in pixels
      * @param y The Y Coordinate of the Bullet, in pixels
      * @param speed The speed of the Bullet
+     * @param ga GameArena instance to which the bullet will be added to
     */
     public Bullet(double x, double y, int speed, GameArena ga) {
         xPosition = x;
@@ -21,6 +23,8 @@ public class Bullet
         this.speed = speed;
         colour = "darkgrey";
         gameArena = ga;
+        width = 5;      // Default width
+        height = 20;    // Default height
     }
 
     public double getXPosition() {
