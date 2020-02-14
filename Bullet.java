@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Bullet 
 {
     // Coords start from top left corner
@@ -9,6 +11,8 @@ public class Bullet
     private GameArena gameArena;    // GameArena instance which parents the bullet
     private double width;           // Width of the bullet in pixels (default 5)
     private double height;          // Height of the bullet in pixels (default 20)
+    private double dx;              // X increment
+    private double dy;              // Y increment
 
     /** 
      * Create new instance of Bullet 
@@ -25,6 +29,7 @@ public class Bullet
         gameArena = ga;
         width = 5;      // Default width
         height = 20;    // Default height
+        calculateIncrements();
     }
 
     public double getXPosition() {
@@ -82,5 +87,15 @@ public class Bullet
     public void draw() {
         Rectangle r = new Rectangle(xPosition, yPosition, width, height, colour);
         gameArena.addRectangle(r);
+    }
+
+    public void calculateIncrements() {
+        dx = speed * Math.cos(Math.toRadians(orientation));
+        dy = speed * Math.sin(Math.toRadians(orientation));
+    }
+
+    public void move() {
+        xPosition += dx;
+        yPosition += dy;
     }
 }
